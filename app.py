@@ -13,14 +13,15 @@ def math_operator():
     number2= request.json["number2"]
 
     if operation== 'add':
-        result= number1+number2
+        result= int(number1)+int(number2)
     elif operation== 'multipy':
-        result= number1*number2
+        result= int(number1)*int(number2)
     elif operation=='division':
-        result= number1/number2
+        result= int(number1)/int(number2)
     else:
-        result= number1-number2
-        
+        result= int(number1)-int(number2)
+    return "The operation is {} and the result is {}".format(operation,result)
+
 
 if __name__ == "__main__":
     app.run()
